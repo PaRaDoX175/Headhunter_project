@@ -1,0 +1,222 @@
+<div class="lol">
+  <h1>Регистрация</h1>
+
+  <div class="form-container">
+    <form [formGroup]="profileForm" class="form-section">
+      <h2>Профиль</h2>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('displayName')?.touched &&
+            profileForm.get('displayName')?.invalid
+          "
+          type="text"
+          id="dname"
+          formControlName="displayName"
+          placeholder="Your Display Name"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('displayName')?.errors?.['required'] && profileForm.get('displayName')?.touched"
+        >
+          Пожалуйста укажите отображаемое имя
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('firstName')?.touched &&
+            profileForm.get('firstName')?.invalid
+          "
+          type="email"
+          id="fname"
+          formControlName="firstName"
+          placeholder="Your First Name"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('firstName')?.errors?.['required'] && profileForm.get('firstName')?.touched"
+        >
+          Пожалуйста укажите имя
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('lastName')?.touched &&
+            profileForm.get('lastName')?.invalid
+          "
+          type="text"
+          placeholder="Your Last Name"
+          id="lname"
+          formControlName="lastName"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('lastName')?.errors?.['required'] && profileForm.get('lastName')?.touched"
+        >
+          Пожалуйста укажите фамилию
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('password')?.touched &&
+            profileForm.get('password')?.invalid
+          "
+          type="password"
+          placeholder="Your Password"
+          id="password"
+          formControlName="password"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('password')?.errors?.['required'] && profileForm.get('password')?.touched"
+        >
+          Пожалуйста укажите пароль
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('phoneNumber')?.touched &&
+            profileForm.get('phoneNumber')?.invalid
+          "
+          type="text"
+          placeholder="Your Phone"
+          id="profile_phone"
+          formControlName="phoneNumber"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('phoneNumber')?.errors?.['required'] && profileForm.get('phoneNumber')?.touched"
+        >
+          Пожалуйста укажите номер телефона
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            profileForm.get('email')?.touched &&
+            profileForm.get('email')?.invalid
+          "
+          type="email"
+          placeholder="Your Email"
+          id="profile_email"
+          formControlName="email"
+          required
+        />
+        <div
+          *ngIf="profileForm.get('email')?.errors?.['required'] && profileForm.get('email')?.touched"
+        >
+          Пожалуйста укажите email
+        </div>
+        <div *ngIf="profileForm.get('email')?.errors?.['email']">
+          Email указан неправильно
+        </div>
+      </div>
+    </form>
+
+    <form [formGroup]="resumeForm" class="form-section">
+      <h2>Резюме</h2>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            resumeForm.get('name')?.touched && resumeForm.get('name')?.invalid
+          "
+          type="text"
+          id="full_name"
+          formControlName="name"
+          placeholder="Your Full Name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          [class.is-invalid]="
+            resumeForm.get('aboutMe')?.touched &&
+            resumeForm.get('aboutMe')?.invalid
+          "
+          type="text"
+          id="about_me"
+          formControlName="aboutMe"
+          placeholder="Write something about you"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            resumeForm.get('email')?.touched && resumeForm.get('email')?.invalid
+          "
+          type="email"
+          placeholder="Your Email"
+          id="email"
+          formControlName="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            resumeForm.get('phoneNumber')?.touched &&
+            resumeForm.get('phoneNumber')?.invalid
+          "
+          type="text"
+          placeholder="Your Phone"
+          id="phone"
+          formControlName="phoneNumber"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            resumeForm.get('profession')?.touched &&
+            resumeForm.get('profession')?.invalid
+          "
+          type="text"
+          placeholder="Wanted profession"
+          id="profession"
+          formControlName="profession"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          [class.is-invalid]="
+            resumeForm.get('skills')?.touched &&
+            resumeForm.get('skills')?.invalid
+          "
+          type="text"
+          placeholder="Your skills"
+          id="skills"
+          formControlName="skills"
+          required
+        />
+      </div>
+    </form>
+  </div>
+
+  <button
+    class="btn"
+    (click)="onSubmit()"
+    [disabled]="!profileForm.valid || !resumeForm.valid"
+  >
+    Отправить
+  </button>
+</div>
+<div
+  *ngIf="errors.length > 0"
+  style="
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 100px;
+    overflow: auto;
+  "
+>
+  <ul *ngFor="let item of errors">
+    <li style="color: red; word-wrap: break-word">{{ item }}</li>
+  </ul>
+</div>

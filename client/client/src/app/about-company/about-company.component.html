@@ -1,0 +1,81 @@
+<div class="mil-container">
+  <div class="company-card">
+    <div class="card-content">
+      <div style="display: flex; gap: 30px; margin-bottom: 10px">
+        <img src="./assets/kaspi-logo.png" alt="" class="company-image" />
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div class="company-card__title">
+            {{ company?.name }}
+          </div>
+
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: flex-end;
+            "
+          >
+            <div class="card-company mb-1">
+              Год основания: {{ company?.foundedYear }}
+            </div>
+            <div>Индустрия: {{ company?.industry }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          max-width: 700px;
+          margin-left: 140px;
+          font-size: 19px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        "
+      >
+        {{ company?.description }}
+      </div>
+
+      <div class="ms-5">
+        <div class="card-location" style="margin-bottom: 10px">
+          <a class="vac-count"
+            >Вакансии от этой компании:
+            <span style="color: #007bff; font-weight: 600">{{
+              company?.vacancies?.length
+            }}</span></a
+          >
+        </div>
+        <div *ngIf="company!.vacancies!.length > 0">
+          <ul *ngFor="let vacancy of company?.vacancies">
+            <li style="width: 300px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div
+                  [routerLink]="['/catalog', vacancy.id]"
+                  class="another-vac"
+                >
+                  {{ vacancy.position }}
+                </div>
+                <div>
+                  <strong>{{ vacancy.salary }}$</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

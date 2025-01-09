@@ -1,0 +1,18 @@
+<div style="position: relative">
+  <div>
+    <div class="smth" style="display: flex; flex-wrap: wrap">
+      <div *ngFor="let item of vacancies">
+        <app-card
+          [vacancy]="item"
+          [isInFavorites]="isInFavorites(item)"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+  <app-pager
+    *ngIf="totalCount > 6"
+    [pageSize]="shopParams.pageSize"
+    [totalCount]="totalCount"
+    (pageChanged)="onPageChanged($event)"
+  ></app-pager>
+</div>

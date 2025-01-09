@@ -1,0 +1,36 @@
+<div *ngIf="isExpired">
+  <div class="overlay">
+    <div
+      class="modal_op"
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 500px;
+        height: 300px;
+        transition: opacity 0.3s ease;
+      "
+    >
+      <h2 style="padding-top: 70px">Срок действия токена истёк</h2>
+      <p>
+        Пожалуйста, войдите в систему снова, чтобы продолжить использование
+        приложения.
+      </p>
+      <button class="btn" style="margin-top: 20px" (click)="reLogin()">
+        Войти снова
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-nav-bar></app-nav-bar>
+
+<div id="content_wrapper">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <app-footer></app-footer> -->

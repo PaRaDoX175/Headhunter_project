@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-content">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div class="card-title">{{ vacancy.position }}</div>
+      <a
+        *ngIf="!isInFavorites"
+        class="card-like"
+        style="align-self: flex-start; cursor: pointer"
+        (click)="updateBasket(vacancy)"
+        (click)="changeIcon()"
+        ><img src="./assets/heart.png" alt=""
+      /></a>
+      <a
+        *ngIf="isInFavorites"
+        class="card-like"
+        style="align-self: flex-start; cursor: pointer"
+        (click)="deleteBasketItem(vacancy.id)"
+        (click)="changeIcon()"
+        ><img src="./assets/blue_heart.png" alt=""
+      /></a>
+    </div>
+    <div class="card-subtitle">{{ vacancy.salary }} $</div>
+    <div class="card-company">
+      {{ vacancy.companyName }}
+    </div>
+    <div class="card-location" style="margin-bottom: 10px">
+      {{ vacancy.location }}
+    </div>
+    <a [routerLink]="['/catalog', vacancy.id]" class="card-button"
+      >Узнать Больше</a
+    >
+  </div>
+</div>

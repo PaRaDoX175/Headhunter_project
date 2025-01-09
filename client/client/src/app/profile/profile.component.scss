@@ -1,0 +1,127 @@
+.mil-container {
+    padding-top: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.f-container div {
+    margin-bottom: 10px;
+}
+
+// .f-container div:last-child {
+//     margin-bottom: 0px;
+// }
+
+.f-c div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.f-c div input, .f-c div textarea {
+    width: 250px;
+    border-radius: 5px;
+    padding: 10px 10px 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.f-c div input:focus,
+.f-c div textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-cancel {
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #007BFF, #00d4ff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(45deg, #00d4ff, #007BFF);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.displayName {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-right: 40px;
+}
+
+.resumeWrapper {
+    background-color: rgb(247, 251, 254);
+    box-shadow: 11px 16px 15px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    position: relative;
+}
+
+.openModal {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    padding: 5px 10px;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    border: 0;
+}
+
+.modalWrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(104, 107, 106, 0.9);
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    z-index: 1000;
+}
+
+.modalBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.smth {
+    width: 700px;
+    height: 570px;
+    background-color: white;
+    position: relative;
+}
+
+.btn-signout {
+    background-color: red;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 0;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-signout:hover {
+    background-color: rgb(170, 0, 0);
+}

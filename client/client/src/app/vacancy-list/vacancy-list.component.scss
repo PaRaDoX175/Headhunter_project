@@ -1,0 +1,28 @@
+.mil-container {
+    padding-top: 100px;
+    margin-left: 200px;
+}
+
+.search-input {
+    width: 500px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}

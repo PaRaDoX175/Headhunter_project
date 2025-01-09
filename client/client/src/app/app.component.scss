@@ -1,0 +1,125 @@
+/* Затемнённый фон (overlay) */
+// .overlay {
+//     position: fixed;
+//     /* Фиксированное позиционирование */
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     /* Темный полупрозрачный фон */
+//     display: flex;
+//     /* Используем Flexbox для центрирования */
+//     justify-content: center;
+//     /* Центрируем по горизонтали */
+//     align-items: center;
+//     /* Центрируем по вертикали */
+//     z-index: 1000;
+//     /* Убедимся, что оно поверх всех элементов */
+//     visibility: visible;
+//     /* Убедимся, что элемент видим */
+// }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Убедитесь, что z-index больше, чем у nav-bar и других элементов */
+}
+/* Модальное окно */
+.modal_op {
+    transition: opacity 0.3s ease;
+    animation: showModal 0.5s ease-out;
+}
+
+/* Анимация появления модального окна */
+// @keyframes showModal {
+//     0% {
+//         opacity: 0;
+//         transform: scale(0.8);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: scale(1);
+//     }
+// }
+
+.modal h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #007BFF, #00d4ff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #00d4ff, #007BFF);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+// .overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 9999;
+// }
+
+// .modal {
+//     background: white;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+//     text-align: center;
+//     max-width: 400px;
+//     width: 80%;
+//     opacity: 1;
+//     z-index: 10000;
+// }
+
+// .modal h2,
+// .modal p,
+// .modal button {
+//     margin: 16px;
+// }

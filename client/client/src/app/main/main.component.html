@@ -1,0 +1,50 @@
+<div class="mil-container">
+  <div class="image-container">
+    <img
+      class="background-image"
+      src="./assets/Background_image.jpg"
+      alt="img"
+    />
+    <div class="overlay"></div>
+    <div class="image-content" style="padding-top: 50px">
+      <h1 style="color: white; margin-bottom: 10px">Найди работу мечты!</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          id="search"
+          name="search"
+          placeholder="Найти вакансии..."
+          [(ngModel)]="search"
+          (keydown.enter)="onSearch()"
+        />
+        <button class="search-button" (click)="onSearch()">Найти</button>
+      </div>
+    </div>
+    <div class="numbers-container">
+      <div class="numbers">
+        <p class="mr">
+          {{ vacancyCount }}
+        </p>
+        <p>Вакансий</p>
+      </div>
+      <div class="numbers">
+        <p class="mr">
+          {{ resumeCount }}
+        </p>
+        <p>Резюме</p>
+      </div>
+      <div style="display: flex; align-items: center; padding: 20px">
+        <p class="mr">
+          {{ companyCount }}
+        </p>
+        <p>Компаний</p>
+      </div>
+    </div>
+    <!-- <div class="btn">
+      <button class="create-button" routerLink="createVacancy">
+        Для компаний
+      </button>
+    </div> -->
+  </div>
+</div>

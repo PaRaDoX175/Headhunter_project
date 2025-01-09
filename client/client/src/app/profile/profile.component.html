@@ -1,0 +1,117 @@
+<div class="mil-container">
+  <div style="display: flex">
+    <div *ngIf="displayName" class="displayName">
+      {{ displayName[0].toUpperCase() }}
+    </div>
+    <div style="margin-bottom: 40px">
+      <h2 style="margin-top: 10px; margin-bottom: 10px">{{ displayName }}</h2>
+      <h4>{{ profileInfo?.email }}</h4>
+    </div>
+  </div>
+  <div class="resumeWrapper">
+    <button class="openModal" (click)="openModal()">Редактировать</button>
+    <div style="margin-left: 40px">
+      <h1 style="text-align: center; padding-top: 20px">Резюме</h1>
+      <div class="f-container" style="font-size: 20px">
+        <div><strong>Полное имя: </strong>{{ resume?.name }}</div>
+        <div><strong>Обо мне: </strong>{{ resume?.aboutMe }}</div>
+        <div>
+          <strong>Профессия, которую вы хотите получить: </strong
+          >{{ resume?.profession }}
+        </div>
+        <div><strong>Ваши навыки: </strong>{{ resume?.skills }}</div>
+        <div><strong>Email: </strong>{{ resume?.email }}</div>
+        <div style="padding-bottom: 30px">
+          <strong>Номер телефона: </strong>{{ resume?.phoneNumber }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn-signout" (click)="logout()">Выйти из аккаунта</button>
+</div>
+
+<div *ngIf="flag" class="modalWrapper">
+  <div class="modalBg">
+    <div class="smth">
+      <button
+        class="btn-cancel"
+        style="position: absolute; top: 3%; right: 3%"
+        (click)="closeModal()"
+      >
+        Отмена
+      </button>
+      <h2 style="text-align: center; padding-top: 10px">Резюме</h2>
+      <div class="f-c" style="margin-left: 20px; margin-right: 20px">
+        <form #resumeForm="ngForm" (ngSubmit)="updateResume(resumeForm.value)">
+          <div>
+            <strong>Полное имя: </strong>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              ngModel
+              [(ngModel)]="resume!.name"
+            />
+          </div>
+          <div>
+            <strong>Обо мне: </strong>
+            <textarea
+              id="aboutMe"
+              name="aboutMe"
+              style="resize: none"
+              ngModel
+              [(ngModel)]="resume!.aboutMe"
+            ></textarea>
+          </div>
+          <div>
+            <strong>Профессия, которую вы хотите получить: </strong>
+            <input
+              id="profession"
+              name="profession"
+              type="text"
+              ngModel
+              [(ngModel)]="resume!.profession"
+            />
+          </div>
+          <div>
+            <strong>Ваши навыки: </strong>
+            <textarea
+              id="skills"
+              name="skills"
+              style="resize: none"
+              ngModel
+              [(ngModel)]="resume!.skills"
+            ></textarea>
+          </div>
+          <div>
+            <strong>Email: </strong>
+            <input
+              name="email"
+              id="email"
+              type="text"
+              ngModel
+              [(ngModel)]="resume!.email"
+            />
+          </div>
+          <div>
+            <strong>Номер телефона: </strong>
+            <input
+              name="phoneNumber"
+              id="phoneNumber"
+              type="text"
+              ngModel
+              [(ngModel)]="resume!.phoneNumber"
+            />
+          </div>
+          <button
+            class="btn-cancel"
+            style="width: 100%; height: 40px; margin-top: 5px"
+            type="submit"
+          >
+            Сохранить изменения
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

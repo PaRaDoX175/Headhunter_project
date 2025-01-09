@@ -1,0 +1,101 @@
+<!-- <div
+  style="
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div
+    *ngIf="favorites?.items?.length === 0"
+    style="font-size: 25px; font-weight: 600"
+  >
+    Пока в корзинке пусто
+  </div>
+</div>
+
+<div *ngIf="favorites.items.length > 0">
+  <div class="mil-container">
+    <div *ngFor="let vacancy of favorites?.items">
+      <div class="card">
+        <div class="mil-deco"></div>
+        <div class="card-content">
+          <div class="card-title" (click)="getDetails(vacancy.id)">
+            {{ vacancy.position }}
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <div class="card-subtitle">{{ vacancy.salary }} $</div>
+              <div class="card-location" style="margin-bottom: 10px">
+                {{ vacancy.location }}
+              </div>
+            </div>
+            <a
+              class="card-button me-3"
+              style="z-index: 3; align-self: flex-end"
+              (click)="deleteFavorites(vacancy.id)"
+              >Удалить из избранного</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Если нет избранных -->
+<!-- <div *ngIf="items.length === 0" style="font-size: 20px; font-weight: 600; padding-top: 200px">
+  Пока в корзинке пусто
+</div> -->
+
+<div
+  *ngIf="items.length === 0"
+  style="
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div style="font-size: 25px; font-weight: 600">Пока в корзинке пусто</div>
+</div>
+
+<!-- Если есть избранные -->
+<div *ngIf="items.length > 0" class="mil-container">
+  <div *ngFor="let vacancy of items" class="card">
+    <div class="mil-deco"></div>
+    <div class="card-content">
+      <div class="card-title" (click)="getDetails(vacancy.id)">
+        {{ vacancy.position }}
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <div class="card-subtitle">{{ vacancy.salary }} $</div>
+          <div class="card-location" style="margin-bottom: 10px">
+            {{ vacancy.location }}
+          </div>
+        </div>
+        <a
+          class="card-button me-3"
+          style="z-index: 3; align-self: flex-end"
+          (click)="deleteFavorites(vacancy.id)"
+          >Удалить из избранного</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

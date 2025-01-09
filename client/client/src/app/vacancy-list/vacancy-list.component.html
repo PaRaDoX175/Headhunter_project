@@ -1,0 +1,19 @@
+<div class="mil-container">
+  <div class="search-container mb-3">
+    <input
+      type="text"
+      class="search-input"
+      id="search"
+      name="search"
+      placeholder="Найти вакансии..."
+      [value]="search"
+      [(ngModel)]="search"
+      (keydown.enter)="onSearch()"
+    />
+    <button class="search-button" (click)="onSearch()">Найти</button>
+    <button class="search-button" *ngIf="search != ''" (click)="remove()">
+      Сбросить
+    </button>
+  </div>
+  <app-catalog></app-catalog>
+</div>

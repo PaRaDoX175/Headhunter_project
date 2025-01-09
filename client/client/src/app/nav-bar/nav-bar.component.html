@@ -1,0 +1,37 @@
+<div class="mil-container">
+  <div class="right">
+    <img
+      routerLink=""
+      src="./assets/logo.png"
+      alt="logo"
+      style="height: 50px; width: auto; cursor: pointer"
+    />
+    <a routerLink="catalog" class="vac_link" (click)="updateData()">Вакансии</a>
+  </div>
+  <div class="buttons" *ngIf="token === null && displayName === null">
+    <button routerLink="login">Войти</button>
+    <button routerLink="register">Регистрация</button>
+  </div>
+  <div *ngIf="token !== null && displayName !== null">
+    <div style="width: auto; display: flex; align-items: center; gap: 20px">
+      <div class="vac_link" [routerLink]="['favorites']">Избранное</div>
+      <div class="vac_link" [routerLink]="['profile']">
+        {{ displayName }}
+      </div>
+      <div
+        style="
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          color: white;
+          background-color: blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        {{ displayName[0] }}
+      </div>
+    </div>
+  </div>
+</div>
