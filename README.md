@@ -18,3 +18,8 @@ Frontend: Angular for user interface development.
 
 Developed a modern job search service that allows to conveniently find vacancies, respond to them and save interesting offers. Thanks to the use of Redis, the performance of working with selected vacancies has been improved.
 The service simplifies the employment process, improves interaction between job seekers and employers and can be useful both for large companies and individual users.
+
+How to launch the project:
+1) First, in headhunter folder in CLI you need to write "dotnet watch run".
+2) Second, in client/client folder you need to write "ng serve".
+3) And finally, in the root of the project, you need to launch REDIS "docker-compose up".
